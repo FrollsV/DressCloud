@@ -1,32 +1,51 @@
 ﻿using BusinessLogic.Forecast;
+using BusinessLogic.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Linq;
 
 namespace MetaWeatherAPI
 {
     public class MetaWeatherForecast
     {
+        private IHttpClient m_HttpCLient;
 
-        public Forecast GetWeatherForecastByGivenCity()
+        public MetaWeatherForecast(IHttpClient httpClient)
         {
-            string locationId = GetLocationIDByCity();
-            string weather = GetWeatherByLocationID();
+            m_HttpCLient = httpClient;
+        } 
 
 
-
-            return null;
-        }
-        private string GetLocationIDByCity()
+        /// <summary>
+        /// Method returned API response 
+        /// </summary>
+        /// <param name="city">user input from UI</param>
+        /// <returns>returns the weather forecast for given city</returns>
+        public Forecast GetWeatherForecast(string city)
         {
+            string locationId = GetLocationIDByCity(city);
+            Forecast weather = GetWeatherByLocationID(locationId);
 
-            return "";
+            return weather;
         }
-
-        private string GetWeatherByLocationID()
+        private string GetLocationIDByCity(string city)
         {
-            return "";
+            var response = m_HttpCLient.GetStringAsync("https://www.metaweather.com/api/location/search/?query=" + city);
+            JArray locationResponse = (JArray)JsonConvert.DeserializeObject(response);
+  
+            return locationResponse[0]["woeid"].Value<string>();
         }
 
-    }
+        private Forecast GetWeatherByLocationID(string woeid)
+        {
+            Forecast forecast = new Forecast();
+            var response = m_HttpCLient.GetStringAsync("https://www.metaweather.com/api/location/" + woeid);
+            dynamic weatherForecast = JObject.Parse(response);
+            forecast.Temperature = (double)(weatherForecast.consolidated_weather[0]["the_temp"].Value);
+            forecast.Condition = weatherForecast.consolidated_weather[0]["weather_state_name"].Value.ToString();
+            return forecast;
+            
+        }
+
+    }  
 }
-
-//System.Net.Http.HttpClient client = new System.Net.Http.HttpClient();
-//var response = client.GetStringAsync("http://www.fuckme.now").GetAwaiter().GetResult();

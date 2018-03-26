@@ -7,6 +7,7 @@
   <ItemGroup>
     <Compile Remove="Class1.cs" />
     <Compile Remove="ClothesPicker\Models\Jaket.cs" />
+    <Compile Remove="Http\IHttpClientcs.cs" />
     <Compile Remove="WeatherForecast\WeatherForecast.cs" />
   </ItemGroup>
 
