@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DressCloud.Web", "DressCloud.Web\DressCloud.Web.csproj", "{36932110-B5DF-4874-8B74-058CB8A94ACE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{24869090-82D0-4DB9-A539-C0C4849F9947}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "XUnitTestProject1\Tests.csproj", "{97DC1B50-4D0F-4B88-992C-4C41B8819950}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaWeatherAPI", "MetaWeatherAPI\MetaWeatherAPI.csproj", "{F552C44B-FC05-425B-9F00-D0D5C02EB05C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{36932110-B5DF-4874-8B74-058CB8A94ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36932110-B5DF-4874-8B74-058CB8A94ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36932110-B5DF-4874-8B74-058CB8A94ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24869090-82D0-4DB9-A539-C0C4849F9947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24869090-82D0-4DB9-A539-C0C4849F9947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24869090-82D0-4DB9-A539-C0C4849F9947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24869090-82D0-4DB9-A539-C0C4849F9947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97DC1B50-4D0F-4B88-992C-4C41B8819950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97DC1B50-4D0F-4B88-992C-4C41B8819950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97DC1B50-4D0F-4B88-992C-4C41B8819950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97DC1B50-4D0F-4B88-992C-4C41B8819950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F552C44B-FC05-425B-9F00-D0D5C02EB05C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F552C44B-FC05-425B-9F00-D0D5C02EB05C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F552C44B-FC05-425B-9F00-D0D5C02EB05C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F552C44B-FC05-425B-9F00-D0D5C02EB05C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
