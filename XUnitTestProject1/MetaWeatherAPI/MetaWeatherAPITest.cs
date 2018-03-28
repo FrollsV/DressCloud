@@ -21,9 +21,6 @@ namespace Tests.MetaWeatherAPI
             forecast = sut.GetWeatherForecast("prague");
             Assert.Equal("Light Cloud", forecast.Condition);
             Assert.Equal(11.98, forecast.Temperature);
-
-
-
       }
     }
 }
